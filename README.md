@@ -1,32 +1,32 @@
 # Commentor_Platform
 This repository contains the text generation API for Commenter Platform 
 
-API README
-Endpoint Description
-This API endpoint provides functionality to store and retrieve information about books.
+## API README
+# Endpoint Description
+This API endpoint provides functionality to generate the comments based on the prompt.
 
-Endpoints
+# Endpoints
 The following endpoints are available:
 
-POST /books
+# POST /gpt3
 Description
-This endpoint allows you to store information about a book.
+This endpoint allows you to generate comment using OpenAI GPT-3 completion endpoint.
 
 Parameters
 The following parameters are required in a POST request to this endpoint:
 
-title (string): the title of the book.
-author (string): the author of the book.
-description (string): a brief description of the book.
-published_date (date): the publication date of the book.
-Example
-To store information about a book using curl, send a POST request to the /books endpoint with the following command:
+prompt (string): Linked/facebook/twitter post for which reponse will be generated.
+keywords (array(list) of string) (optional): Keywords based on which response will be generated.
+emotions (string): Type of the response. It can be sarcastic, funny, serious, provocative ,creative (defult)
+platform (string): The platform can be facebook, linkedin or twitter. It determines the length of the reponse.
 
-vbnet
-Copy code
-curl -X POST "http://<API_URL>/books" -H "Content-Type: application/json" -d '{
-  "title": "The Great Gatsby",
-  "author": "F. Scott Fitzgerald",
-  "description": "A novel about the decadence of the jazz age",
-  "published_date": "1925-04-10"
+Example
+To get a reponse using this POST api following curk command can be used:
+
+curl -X POST "http://127.0.0.1:5000/gpt3" -H "Content-Type: application/json" -d '{
+    "prompt": "I am changing my job.",
+    "keywords":["excited", "nervous"],
+    "emotion":"funny",
+    "platform": "facebook"
+
 }'
