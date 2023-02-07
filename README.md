@@ -27,7 +27,7 @@ To get a response using this POST API, the following curl command can be used:
 curl -X POST "http://127.0.0.1:5000/gpt3" -H "Content-Type: application/json" -d '{
     "prompt": "I am changing my job.",
     "keywords":["excited", "nervous"],
-    "emotion":"funny",
+    "emotion":"serious",
     "platform": "facebook"
 
 }'
