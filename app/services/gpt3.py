@@ -21,6 +21,16 @@ def generate_text():
     Endpoint that generates text based on the specified emotion.
     """
     try:
+        
+        # authorization check is commented and will be enabled when api integeration will be tested
+        
+        # access_token = request.headers.get("Authorization")
+        # if not access_token:
+        #     return "Access token not found in header", 401
+        # access_check_response = requests.post("http://access_check_api.com/check", headers={"Authorization": access_token})
+        # if access_check_response.status_code != 200:
+        #     return "Access denied", 401
+                
         # Extract the emotion from the request
         emotion = request.json['emotion']
         prompt = request.json['prompt']
@@ -75,8 +85,8 @@ def generate_text():
         data = {
             "prompt": prompt,
             "model": model,
-            "temperature": 0.9,
-            "top_p": 1,
+            "temperature": 0.7,
+            "top_p": 0.95,
             "max_tokens": max_words,
             # "max_chars": max_characters,
             "presence_penalty": 0.8,
