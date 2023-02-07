@@ -23,8 +23,11 @@ class GenerateTextTestCase(unittest.TestCase):
             "Content-Type": "application/json"
         }
         data = {
-            "emotion": "funny",
-            "prompt": "This is a test prompt."
+            "prompt": "I am changing my job.",
+            "keywords": ["chellenges"],
+            "emotion":"funny",
+            "platform": "facebook"
+            
         }
         response = self.app.post("/gpt3", headers=headers, data=json.dumps(data))
         self.assertEqual(response.status_code, 200)

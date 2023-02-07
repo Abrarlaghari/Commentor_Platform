@@ -53,20 +53,9 @@ def generate_text():
         default_prompt = "Create a unique and thought-provoking comment, showcasing your creativity and knowledge of the topic while offering a positive outlook on its impact on the industry or professionals"
         
         if keywords:
-            prompt = emotion_map.get(emotion.lower(), default_prompt)+ " using these keywords: "+" ".join(keywords) +" on the following post \n" + prompt 
+            prompt = emotion_map.get(emotion.lower(), default_prompt)+" on the following post \n" + prompt + "\n based on these keywords: "+", ".join(keywords)  
         else:
             prompt = emotion_map.get(emotion.lower(), default_prompt)+" on the following post \n" + prompt 
-                
-            
-       # # Define the prompt based on the emotion
-       #  # prompt = ""
-       #  if emotion == "funny":
-       #      prompt = f"Please make a funny comment on this statement (up to {max_words} words or {max_characters} characters for {platform}): "+prompt
-       #  elif emotion == "angry":
-       #      prompt = f"Please make an angry comment on this statement (up to {max_words} words or {max_characters} characters for {platform}): "+prompt
-       #  else:
-       #      prompt = f"Please make a comment on this statement (up to {max_words} words or {max_characters} characters for {platform}): "+prompt
-        
 
         # Define the API key and the endpoint URL
         api_key = API_KEY
@@ -86,8 +75,8 @@ def generate_text():
         data = {
             "prompt": prompt,
             "model": model,
-            "temperature": 0.8,
-            "top_p": 0.95,
+            "temperature": 0.9,
+            "top_p": 1,
             "max_tokens": max_words,
             # "max_chars": max_characters,
             "presence_penalty": 0.8,
