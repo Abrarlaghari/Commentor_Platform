@@ -1,28 +1,29 @@
 # Commentor_Platform
-This repository contains the text generation API for Commenter Platform 
+This repository contains the text generation API for Commenter Platform.
 
 ## API README
 # Endpoint Description
-This API endpoint provides functionality to generate the comments based on the prompt.
+This API endpoint provides functionality to generate comments based on the prompt.
 
 # Endpoints
 The following endpoints are available:
 
-# POST /gpt3
-Description
-This endpoint allows you to generate comment using OpenAI GPT-3 completion endpoint.
+## POST /gpt3
+### Description
+This endpoint allows you to generate comments using the OpenAI GPT-3 completion endpoint.
 
-Parameters
+### Parameters
 The following parameters are required in a POST request to this endpoint:
 
-prompt (string): Linked/facebook/twitter post for which reponse will be generated.
-keywords (array(list) of string) (optional): Keywords based on which response will be generated.
-emotions (string): Type of the response. It can be sarcastic, funny, serious, provocative ,creative (defult)
-platform (string): The platform can be facebook, linkedin or twitter. It determines the length of the reponse.
+- `prompt` (string): A linked/facebook/twitter post for which a response will be generated.
+- `keywords` (optional, array of strings): Keywords based on which the response will be generated.
+- `emotions` (string): The type of response. It can be `sarcastic`, `funny`, `serious`, `provocative`, or `creative` (default).
+- `platform` (string): The platform can be `facebook`, `linkedin`, or `twitter`. It determines the length of the response.
 
-Example
-To get a reponse using this POST api following curk command can be used:
+### Example
+To get a response using this POST API, the following curl command can be used:
 
+```shell
 curl -X POST "http://127.0.0.1:5000/gpt3" -H "Content-Type: application/json" -d '{
     "prompt": "I am changing my job.",
     "keywords":["excited", "nervous"],
