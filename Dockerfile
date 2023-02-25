@@ -1,6 +1,7 @@
 FROM python:3.9
 WORKDIR /app
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-CMD ["gunicorn", "-c", "gunicorn.conf.py", "app.main:app"]
+EXPOSE 5000
+CMD ["gunicorn", "app.main:app", "-b", "0.0.0.0:5000", "-c", "gunicorn.conf.py", "-k", "gthread", "--worker-tmp-dir", "/dev/shm"]
