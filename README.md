@@ -20,7 +20,7 @@ The following parameters are required in a POST request to this endpoint:
 - `emotions` (string): The type of response. It can be `sarcastic`, `funny`, `serious`, `provocative`, or `creative` (default).
 - `platform` (string): The platform can be `facebook`, `linkedin`, or `twitter`. It determines the length of the response.
 
-### Example
+### Example using curl
 To get a response using this POST API, the following curl command can be used:
 
 ```shell
@@ -33,7 +33,8 @@ curl -X POST "http://127.0.0.1:5000/gpt3" -H "Content-Type: application/json" -d
 }
 ```
 
-<h3>POST: /auth/login</h3>
+
+<h3>POST: /gpt3</h3>
 REQUEST:
 
 ```
