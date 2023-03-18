@@ -1,5 +1,5 @@
 # Commentor_Platform
-This repository contains the text generation API for Commenter Platform.
+This repository contains the text generation API for Commenter Platform. This API can be run locally using flask. If flask is available then just run run.sh file to start the service locally. 
 
 ## API README
 # Endpoint Description
