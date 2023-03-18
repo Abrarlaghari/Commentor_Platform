@@ -31,5 +31,35 @@ curl -X POST "http://127.0.0.1:5000/gpt3" -H "Content-Type: application/json" -d
     "platform": "facebook"
 
 }
+```
 
-### New Example
+<h3>POST: /auth/login</h3>
+REQUEST:
+
+```
+    {
+        "email": "test1@abv.bg", // string
+        "password": "Aa123456!" // Password with atleast 8 characters
+    }
+```
+
+RESPONSE:
+
+```
+    {
+        "expiration": 1675787447711,
+        "userData": {
+            "email": "yoan@yopmail.com",
+            "authorizationLevel": 1,
+            "isEmailValid": false,
+            "stripeId": "sdasdadas"
+        }
+    }
+
+    // If it fails:
+    
+    {
+        "success": false,
+        "message": "Invalid password!"
+    }
+```
