@@ -30,23 +30,6 @@ curl -X POST "http://127.0.0.1:5000/gpt3" -H "Content-Type: application/json" -d
     "emotion":"serious",
     "platform": "facebook"
 
-}'
+}
 
-<h3>POST: /register</h3>
-REQUEST:
-
-```
-    {
-        "email": "yoan@yopmail.com",
-        "password": "Aa123456!"
-    }
-```
-
-RESPONSE:
-
-```
-    {
-        "success": true // either true or false on success,
-        "message: "User already exists!" // optional value that appears only when success is false
-    }
-```
+### New Example
