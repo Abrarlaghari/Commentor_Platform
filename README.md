@@ -24,10 +24,10 @@ REQUEST:
 
 ```
     {
-     "prompt": "I am changing my job.", //string
-    "keywords":["excited", "nervous"],  //string
-    "emotion":"serious",  //string
-    "platform": "facebook"  //string
+     "prompt": "I am changing my job.", 
+    "keywords":["excited", "nervous"],  
+    "emotion":"serious", 
+    "platform": "facebook" 
     }
 ```
 
