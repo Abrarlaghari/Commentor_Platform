@@ -60,7 +60,7 @@ def generate_text():
             "controversial": "Compose a controversial and bold comment, addressing a sensitive or divisive issue",
         }
         
-         default_prompt = "Craft a unique, human-like comment to the following LinkedIn post. The comment should not rephrase any part of the post but introduce a fresh perspective or idea that stimulates discussion, while remaining engaging and relevant. Ensure to follow LinkedIn's best practices."
+         default_prompt = "Craft a unique, human-like comment to the following LinkedIn post The comment should not rephrase any part of the post but introduce a fresh perspective or idea that stimulates discussion, while remaining engaging and relevant Ensure to follow LinkedIn's best practices"
         #default_prompt = "Create a unique and thought-provoking comment, showcasing your creativity and knowledge of the topic"
         if keywords:
             prompt = emotion_map.get(emotion.lower(), default_prompt)+" on the following post \n" + prompt + "\n based on these keywords: "+", ".join(keywords) + "\n The comment shouldnot be longer than "+ str(max_words-10) + " words."  
