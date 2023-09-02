@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "janjoerke.jenkins-pipeline-linter-connector"
+        "myml.vscode-markdown-plantuml-preview",
+        "esbenp.prettier-vscode",
+        "jebbs.plantuml"
     ]
 }
